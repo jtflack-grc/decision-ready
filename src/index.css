@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    'Inter Variable',
+    Inter,
+    'SF Pro Text',
+    'SF Pro Display',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Helvetica Neue',
+    'Avenir Next',
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  background: linear-gradient(180deg, #020407 0%, #020407 35%, #04080d 100%);
+  color: #e2e8f0;
+  letter-spacing: 0.003em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'cv11' 1, 'ss01' 1;
+}
+
+::selection {
+  background: rgba(16, 185, 129, 0.35);
+  color: #f8fafc;
+}
+
+input,
+select,
+textarea,
+button {
+  border-radius: 0.9rem;
+}
+
+input,
+select,
+textarea {
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: none;
+  border-color: rgba(16, 185, 129, 0.85) !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* Hero title: pixel terminal vibe aligned with i on GRC logo (Press Start 2P) */
+.hero-terminal-title {
+  font-family: 'Press Start 2P', ui-monospace, monospace;
+  display: inline-block;
+  /* Fluid size: keep long title on one line (Press Start 2P is wide) */
+  /* Larger cap for wide screens; small min keeps narrow phones on one line */
+  font-size: clamp(0.52rem, 0.3rem + 1.1vw, 1rem);
+  /* Darker 5250-style terminal green (less mint, more CRT phosphor) */
+  color: #2a9d5f;
+  letter-spacing: 0.1em;
+  word-spacing: 0.08em;
+  line-height: 1.65;
+  /* Slight horizontal stretch reads closer to the logo’s wider pixel cells */
+  transform: scaleX(1.045);
+  transform-origin: left center;
+  text-shadow:
+    0 0 1px rgba(0, 0, 0, 0.95),
+    0 0 1px rgba(0, 0, 0, 0.85),
+    0 0 6px rgba(42, 157, 95, 0.45),
+    0 0 14px rgba(34, 120, 72, 0.35),
+    0 0 28px rgba(15, 80, 48, 0.25);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: auto;
+}
+
+@media (max-width: 640px) {
+  .hero-terminal-title {
+    letter-spacing: 0.08em;
+    word-spacing: 0.06em;
+    transform: scaleX(1.03);
+  }
+}
